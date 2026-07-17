@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1xv5ev3srvft"]
+
+[ext_resource type="PackedScene" uid="uid://dxeirnxs8cup3" path="res://scenes/bullet/bullet.tscn" id="1_d3jed"]
+
+[node name="test_pat" type="Node2D"]
+
+[node name="bullet" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(0, -12)
+delay = 0.8
+
+[node name="bullet2" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(0, 16)
+delay = 1.0
+
+[node name="bullet3" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(0, 47)
+delay = 1.2
+
+[node name="bullet4" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(0, 77)
+delay = 1.4
+
+[node name="bullet13" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(0, -130)
+
+[node name="bullet14" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(0, -102)
+delay = 0.2
+
+[node name="bullet15" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(0, -71)
+delay = 0.4
+
+[node name="bullet16" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(0, -41)
+delay = 0.6
+
+[node name="bullet5" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(265, 0)
+rotation = 3.1415927
+delay = 0.6
+
+[node name="bullet6" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(265, 28)
+rotation = 3.1415927
+delay = 0.4
+
+[node name="bullet7" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(265, 59)
+rotation = 3.1415927
+delay = 0.2
+
+[node name="bullet8" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(265, 89)
+rotation = 3.1415927
+
+[node name="bullet9" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(265, -117)
+rotation = 3.1415927
+delay = 1.4
+
+[node name="bullet10" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(265, -89)
+rotation = 3.1415927
+delay = 1.2
+
+[node name="bullet11" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(265, -58)
+rotation = 3.1415927
+delay = 1.0
+
+[node name="bullet12" parent="." instance=ExtResource("1_d3jed")]
+position = Vector2(265, -28)
+rotation = 3.1415927
+delay = 0.8
