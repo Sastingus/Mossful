@@ -11,4 +11,4 @@
 zoom = Vector2(3, 3)
 
 [node name="test_pat" parent="." instance=ExtResource("2_sl2e5")]
-position = Vector2(-131, 20)
+position = Vector2(-130, 18)
