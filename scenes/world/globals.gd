@@ -2,6 +2,7 @@ extends Node
 
 var player_hp := 150.0
 var max_player_hp := 150.0
+var player_dmg := 15.0
 var player_poi := 0.0
 var is_player_poi := false
 

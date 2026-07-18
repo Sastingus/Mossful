@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3vnnnd2fe8u"]
+[gd_scene load_steps=4 format=3 uid="uid://d3vnnnd2fe8u"]
 
 [ext_resource type="PackedScene" uid="uid://d1w5ccem33kle" path="res://scenes/player/player.tscn" id="1_dphjl"]
+[ext_resource type="PackedScene" uid="uid://dsnf0fg816wds" path="res://scenes/boss/boss.tscn" id="2_1fp7r"]
 [ext_resource type="PackedScene" uid="uid://b1xv5ev3srvft" path="res://bullet_patterns/test_pat.tscn" id="2_sl2e5"]
 
 [node name="world" type="Node2D"]
@@ -10,5 +11,6 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="test_pat" parent="." instance=ExtResource("2_sl2e5")]
-position = Vector2(-130, 18)
+[node name="boss" parent="." instance=ExtResource("2_1fp7r")]
+position = Vector2(1, -68)
+patterns = Array[PackedScene]([ExtResource("2_sl2e5")])

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsnf0fg816wds"]
+
+[ext_resource type="Script" uid="uid://d2pkhjhdk82sm" path="res://scenes/boss/boss.gd" id="1_dgf3a"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_8ftqf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atjq5"]
+size = Vector2(66, 66)
+
+[node name="boss" type="StaticBody2D"]
+script = ExtResource("1_dgf3a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_atjq5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("2_8ftqf")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="attack"]

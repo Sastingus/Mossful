@@ -4,6 +4,7 @@ class_name Bullet
 @export var speed: int = 225
 @export var delay: float = 0.0
 @export var spin: float = 0.0
+@export var acceleration : int = 0
 
 @onready var delay_timer: Timer = $DelayTimer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -14,6 +15,7 @@ var distance_traveled : float = 0
 const DESPAWN_DISTANCE =  1500
 
 func _ready() -> void:
+	visible = false
 	if delay != 0:
 		delay_timer.wait_time = delay
 		delay_timer.start()
@@ -26,6 +28,7 @@ func _physics_process(delta: float) -> void:
 		position += Vector2(dir.normalized() * speed * delta)
 		distance_traveled += speed * delta
 		rotation += spin/100
+		speed += acceleration
 		if distance_traveled > DESPAWN_DISTANCE:
 			queue_free()
 

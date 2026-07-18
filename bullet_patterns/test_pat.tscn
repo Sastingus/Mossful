@@ -7,71 +7,71 @@
 script = ExtResource("1_3jpc2")
 
 [node name="bullet" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(0, -12)
+position = Vector2(-133, 2)
 delay = 0.8
 
 [node name="bullet2" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(0, 16)
+position = Vector2(-133, 30)
 delay = 1.0
 
 [node name="bullet3" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(0, 47)
+position = Vector2(-133, 61)
 delay = 1.2
 
 [node name="bullet4" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(0, 77)
+position = Vector2(-133, 91)
 delay = 1.4
 
 [node name="bullet13" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(0, -130)
+position = Vector2(-133, -116)
 
 [node name="bullet14" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(0, -102)
+position = Vector2(-133, -88)
 delay = 0.2
 
 [node name="bullet15" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(0, -71)
+position = Vector2(-133, -57)
 delay = 0.4
 
 [node name="bullet16" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(0, -41)
+position = Vector2(-133, -27)
 delay = 0.6
 
 [node name="bullet5" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(265, 0)
+position = Vector2(132, 14)
 rotation = 3.1415927
 delay = 0.6
 
 [node name="bullet6" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(265, 28)
+position = Vector2(132, 42)
 rotation = 3.1415927
 delay = 0.4
 
 [node name="bullet7" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(265, 59)
+position = Vector2(132, 73)
 rotation = 3.1415927
 delay = 0.2
 
 [node name="bullet8" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(265, 89)
+position = Vector2(132, 103)
 rotation = 3.1415927
 
 [node name="bullet9" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(265, -117)
+position = Vector2(132, -103)
 rotation = 3.1415927
 delay = 1.4
 
 [node name="bullet10" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(265, -89)
+position = Vector2(132, -75)
 rotation = 3.1415927
 delay = 1.2
 
 [node name="bullet11" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(265, -58)
+position = Vector2(132, -44)
 rotation = 3.1415927
 delay = 1.0
 
 [node name="bullet12" parent="." instance=ExtResource("1_d3jed")]
-position = Vector2(265, -28)
+position = Vector2(132, -14)
 rotation = 3.1415927
 delay = 0.8
