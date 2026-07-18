@@ -31,10 +31,7 @@ texture = ExtResource("2_gmlin")
 
 [node name="PoisonTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-
-[node name="PoisonTickTimer" type="Timer" parent="."]
-unique_name_in_owner = true
-wait_time = 0.5
+wait_time = 0.25
 
 [node name="HpLabel" type="Label" parent="."]
 top_level = true
@@ -46,5 +43,4 @@ scale = Vector2(0.45756978, 0.45756978)
 text = "    hp:
 150/150"
 
-[connection signal="timeout" from="PoisonTimer" to="." method="poison_end"]
-[connection signal="timeout" from="PoisonTickTimer" to="." method="poison_tick"]
+[connection signal="timeout" from="PoisonTimer" to="." method="poison_tick"]
