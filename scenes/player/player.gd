@@ -32,8 +32,9 @@ func poisoned():
 	print("poison is "+str(Globals.player_poi))
 
 func poison_tick():
-	Globals.player_poi -= poison_timer.wait_time
 	if Globals.player_poi > 0:
+		Globals.player_poi -= poison_timer.wait_time
 		Globals.player_hp -= Globals.poi_dmg
 	else:
-		poison_timer.stop()
+		if Globals.player_hp != Globals.max_player_hp:
+			Globals.player_hp += Globals.heal
