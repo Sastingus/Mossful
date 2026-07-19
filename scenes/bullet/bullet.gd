@@ -8,6 +8,7 @@ class_name Bullet
 
 @onready var delay_timer: Timer = $DelayTimer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var particles: GPUParticles2D = $GPUParticles2D
 
 var bullet_spawned := false
 
@@ -33,6 +34,7 @@ func _physics_process(delta: float) -> void:
 			queue_free()
 
 func spawn_bullet() -> void:
+	particles.emitting = true
 	bullet_spawned = true
 	visible = true
 	collision_shape_2d.disabled = false

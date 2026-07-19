@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 10000
+const SPEED = 7500
 
 var target_player_hp := 150.0
 
