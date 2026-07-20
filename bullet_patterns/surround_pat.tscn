@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqr6ue17supu2"]
+
+[ext_resource type="PackedScene" uid="uid://dxeirnxs8cup3" path="res://scenes/bullet/bullet.tscn" id="1_vlrhn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="EnemyBullet" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(44, -43)
+rotation = 0.7853982
+spin = 6.0
+acceleration = 2
+
+[node name="EnemyBullet2" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(44, -43)
+rotation = 0.7853982
+delay = 0.2
+spin = 6.0
+acceleration = 2
+
+[node name="EnemyBullet3" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(44, -43)
+rotation = 0.7853982
+delay = 0.4
+spin = 6.0
+acceleration = 2
+
+[node name="EnemyBullet4" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(44, -43)
+rotation = 0.7853982
+delay = 0.6
+spin = 6.0
+acceleration = 2
+
+[node name="EnemyBullet9" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(44, -43)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+delay = 0.8
+spin = 6.0
+acceleration = 2
+
+[node name="EnemyBullet5" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(-43, 44)
+rotation = 3.926991
+spin = 6.0
+acceleration = 2
+
+[node name="EnemyBullet6" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(-43, 44)
+rotation = 3.926991
+delay = 0.2
+spin = 6.0
+acceleration = 2
+
+[node name="EnemyBullet7" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(-43, 44)
+rotation = 3.926991
+delay = 0.4
+spin = 6.0
+acceleration = 2
+
+[node name="EnemyBullet8" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(-43, 44)
+rotation = 3.926991
+delay = 0.6
+spin = 6.0
+acceleration = 2
+
+[node name="EnemyBullet10" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(-43, 44)
+rotation = 3.926991
+delay = 0.8
+spin = 6.0
+acceleration = 2
+
+[node name="EnemyBullet11" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(-157, 0)
+delay = 0.4
+acceleration = 5
+
+[node name="EnemyBullet13" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(105, -17)
+rotation = 3.1415927
+delay = 0.4
+acceleration = 5
+
+[node name="EnemyBullet15" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(45, 73)
+rotation = 4.396374
+delay = 0.4
+acceleration = 5
+
+[node name="EnemyBullet12" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(-109, -101)
+rotation = 0.7853982
+delay = 0.6
+acceleration = 5
+
+[node name="EnemyBullet16" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(-74, 93)
+rotation = -1.0471976
+delay = 0.5
+acceleration = 5
+
+[node name="EnemyBullet14" parent="." instance=ExtResource("1_vlrhn")]
+position = Vector2(54, -103)
+rotation = 2.0943952
+delay = 0.5
+acceleration = 5

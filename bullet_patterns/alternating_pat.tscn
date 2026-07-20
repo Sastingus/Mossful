@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://djxhhwmyaygw5"]
+
+[ext_resource type="PackedScene" uid="uid://dxeirnxs8cup3" path="res://scenes/bullet/bullet.tscn" id="1_ky0da"]
+
+[node name="Node2D" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-289.0]
+
+[node name="EnemyBullet" parent="." instance=ExtResource("1_ky0da")]
+position = Vector2(-214, -67)
+scale = Vector2(3.0828867, 3.0828867)
+acceleration = 2
+
+[node name="EnemyBullet2" parent="." instance=ExtResource("1_ky0da")]
+position = Vector2(197, 3)
+rotation = 3.1415927
+scale = Vector2(3.0828867, 3.0828867)
+delay = 0.5
+acceleration = 2
+
+[node name="EnemyBullet3" parent="." instance=ExtResource("1_ky0da")]
+position = Vector2(-213, 71)
+rotation = 6.2831855
+scale = Vector2(3.0828867, 3.0828867)
+delay = 1.0
+acceleration = 2
+
+[node name="EnemyBullet4" parent="." instance=ExtResource("1_ky0da")]
+position = Vector2(1, -145)
+rotation = 1.5707964
+delay = 0.2
+
+[node name="EnemyBullet5" parent="." instance=ExtResource("1_ky0da")]
+position = Vector2(43, -145)
+rotation = 1.5707964
+delay = 0.4
+
+[node name="EnemyBullet6" parent="." instance=ExtResource("1_ky0da")]
+position = Vector2(-41, -145)
+rotation = 1.5707964
+delay = 0.6

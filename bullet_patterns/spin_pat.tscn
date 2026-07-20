@@ -54,3 +54,26 @@ rotation = 4.712389
 delay = 0.5
 spin = -3.0
 acceleration = -5
+
+[node name="EnemyBullet" parent="." instance=ExtResource("1_4pagn")]
+position = Vector2(8, -8)
+rotation = 3.1415927
+speed = 250
+delay = 1.5
+
+[node name="EnemyBullet4" parent="." instance=ExtResource("1_4pagn")]
+position = Vector2(-7, 7)
+speed = 250
+delay = 1.5
+
+[node name="EnemyBullet2" parent="." instance=ExtResource("1_4pagn")]
+position = Vector2(8, 7)
+rotation = 4.712389
+speed = 250
+delay = 1.5
+
+[node name="EnemyBullet3" parent="." instance=ExtResource("1_4pagn")]
+position = Vector2(-7, -8)
+rotation = 7.853982
+speed = 250
+delay = 1.5
