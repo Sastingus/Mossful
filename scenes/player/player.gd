@@ -7,10 +7,11 @@ var target_player_hp := 150.0
 @onready var poison_timer: Timer = %PoisonTimer
 @onready var hp_label: Label = $HpLabel
 @onready var heal_timer: Timer = %HealTimer
+@onready var boss_bar: ProgressBar = $BossBar
 
 func _ready() -> void:
 	SignalBus.player_poisoned.connect(poisoned)
-	
+	boss_bar.max_value = Globals.boss_max_hp
 
 func _physics_process(delta: float) -> void:
 	var inputDir := Vector2.ZERO
@@ -24,14 +25,24 @@ func _process(_delta: float) -> void:
 	hp_label.text = "       hp:
 	"+str(Globals.player_hp)+ "/150.0"
 	
+	boss_bar.value = Globals.boss_hp
+	
 	if Globals.player_hp <= 0:
 		die()
 
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("attack"):
-		attack()
-
+	if Input.is_action_just_pressed("attack_up"):
+		attack("up")
+	elif Input.is_action_just_pressed("attack_left"):
+		attack("left")
+	elif Input.is_action_just_pressed("attack_right"):
+		attack("right")
+	elif Input.is_action_just_pressed("attack_down"):
+		attack("down")
+	
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = true
 
 '
 poison and health
@@ -67,6 +78,16 @@ func die():
 attack
 '
 
-func attack():
-	pass
-	
+func attack(dir):
+	match dir:
+		"up":spawn_arrow(Vector2(0,-24),-90)
+		"down":spawn_arrow(Vector2(0,24),90)
+		"left":spawn_arrow(Vector2(-24,0),180)
+		"right":spawn_arrow(Vector2(24,0),0)
+
+
+func spawn_arrow(pos,dir):
+	var new_arrow = preload("uid://2nrsaxpsfv4i").instantiate()
+	add_sibling(new_arrow)
+	new_arrow.position = pos+self.position
+	new_arrow.rotation_degrees = dir

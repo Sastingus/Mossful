@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1w5ccem33kle"]
+[gd_scene load_steps=6 format=3 uid="uid://d1w5ccem33kle"]
 
 [ext_resource type="Script" uid="uid://cfwnkyjeohsul" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_gmlin"]
+[ext_resource type="PackedScene" uid="uid://2nrsaxpsfv4i" path="res://scenes/player_arrow/player_arrow.tscn" id="3_gmlin"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvxji"]
 radius = 3.0
 height = 14.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dovo2"]
+bg_color = Color(0.2653605, 0.26536053, 0.26536044, 0.47843137)
+
 [node name="player" type="CharacterBody2D"]
 collision_layer = 9
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_dovo2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -46,6 +50,21 @@ offset_bottom = 130.0
 scale = Vector2(0.45756978, 0.45756978)
 text = "    hp:
 150/150"
+
+[node name="BossBar" type="ProgressBar" parent="."]
+top_level = true
+z_index = 2
+offset_left = -136.0
+offset_top = -101.0
+offset_right = 138.0
+offset_bottom = -93.0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_dovo2")
+show_percentage = false
+
+[node name="PlayerArrow" parent="." instance=ExtResource("3_gmlin")]
+position = Vector2(0, -26)
+rotation = 4.712389
 
 [connection signal="timeout" from="PoisonTimer" to="." method="poison_tick"]
 [connection signal="timeout" from="HealTimer" to="." method="heal_tick"]

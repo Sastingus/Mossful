@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://2nrsaxpsfv4i"]
+
+[ext_resource type="Script" uid="uid://bippstebdrspd" path="res://scenes/player_arrow/player_arrow.gd" id="1_7sdfr"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_j7mhf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sdfr"]
+size = Vector2(18, 4)
+
+[node name="PlayerArrow" type="Area2D"]
+rotation = -1.5707964
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_7sdfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7sdfr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.109375, 0.012867674)
+texture = ExtResource("1_j7mhf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

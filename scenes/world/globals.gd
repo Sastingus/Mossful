@@ -9,3 +9,6 @@ var is_player_poi := false
 var heal := 0.5
 var poi_dmg := 1.5
 var on_hit_poi := 1.5
+
+var boss_hp := 300.0
+var boss_max_hp := 300.0

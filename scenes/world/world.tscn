@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3vnnnd2fe8u"]
+[gd_scene load_steps=7 format=3 uid="uid://d3vnnnd2fe8u"]
 
 [ext_resource type="PackedScene" uid="uid://d1w5ccem33kle" path="res://scenes/player/player.tscn" id="1_dphjl"]
 [ext_resource type="PackedScene" uid="uid://dsnf0fg816wds" path="res://scenes/boss/boss.tscn" id="2_1fp7r"]
 [ext_resource type="PackedScene" uid="uid://b1xv5ev3srvft" path="res://bullet_patterns/test_pat.tscn" id="2_sl2e5"]
-[ext_resource type="PackedScene" uid="uid://b6xo53voey65y" path="res://bullet_patterns/test_pat_spin.tscn" id="4_6m72w"]
+[ext_resource type="PackedScene" uid="uid://b6xo53voey65y" path="res://bullet_patterns/spin_pat.tscn" id="4_6m72w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6m72w"]
+size = Vector2(50, 236)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5dby"]
+size = Vector2(316, 33)
 
 [node name="world" type="Node2D"]
 
@@ -14,7 +20,7 @@ zoom = Vector2(3, 3)
 
 [node name="boss" parent="." instance=ExtResource("2_1fp7r")]
 position = Vector2(1, -72)
-patterns = Array[PackedScene]([ExtResource("2_sl2e5"), ExtResource("4_6m72w")])
+patterns = Array[PackedScene]([ExtResource("4_6m72w"), ExtResource("2_sl2e5")])
 attackSpeed = 3.0
 
 [node name="background" type="Node2D" parent="."]
@@ -42,3 +48,21 @@ offset_top = -127.0
 offset_right = 198.0
 offset_bottom = 115.0
 color = Color(0.055911608, 0.07816715, 0.12168569, 1)
+
+[node name="Collision" type="StaticBody2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Collision"]
+position = Vector2(-180, -4)
+shape = SubResource("RectangleShape2D_6m72w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="background/Collision"]
+position = Vector2(179, -10)
+shape = SubResource("RectangleShape2D_6m72w")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="background/Collision"]
+position = Vector2(-4, 95)
+shape = SubResource("RectangleShape2D_v5dby")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="background/Collision"]
+position = Vector2(-4, -113)
+shape = SubResource("RectangleShape2D_v5dby")
