@@ -2,16 +2,20 @@ extends CharacterBody2D
 
 const SPEED = 7500
 
-var target_player_hp := 150.0
+var can_attack := true
+
 
 @onready var poison_timer: Timer = %PoisonTimer
 @onready var hp_label: Label = $HpLabel
 @onready var heal_timer: Timer = %HealTimer
 @onready var boss_bar: ProgressBar = $BossBar
+@onready var attack_timer: Timer = %AttackTimer
+@onready var attack_bar: ProgressBar = $AttackBar
 
 func _ready() -> void:
 	SignalBus.player_poisoned.connect(poisoned)
 	boss_bar.max_value = Globals.boss_max_hp
+	attack_bar.min_value = -attack_timer.wait_time
 
 func _physics_process(delta: float) -> void:
 	var inputDir := Vector2.ZERO
@@ -26,6 +30,7 @@ func _process(_delta: float) -> void:
 	"+str(Globals.player_hp)+ "/150.0"
 	
 	boss_bar.value = Globals.boss_hp
+	attack_bar.value = -attack_timer.time_left
 	
 	if Globals.player_hp <= 0:
 		die()
@@ -79,11 +84,14 @@ attack
 '
 
 func attack(dir):
-	match dir:
-		"up":spawn_arrow(Vector2(0,-24),-90)
-		"down":spawn_arrow(Vector2(0,24),90)
-		"left":spawn_arrow(Vector2(-24,0),180)
-		"right":spawn_arrow(Vector2(24,0),0)
+	if can_attack:
+		match dir:
+			"up":spawn_arrow(Vector2(0,-24),-90)
+			"down":spawn_arrow(Vector2(0,24),90)
+			"left":spawn_arrow(Vector2(-24,0),180)
+			"right":spawn_arrow(Vector2(24,0),0)
+		can_attack = false
+		attack_timer.start()
 
 
 func spawn_arrow(pos,dir):
@@ -91,3 +99,7 @@ func spawn_arrow(pos,dir):
 	add_sibling(new_arrow)
 	new_arrow.position = pos+self.position
 	new_arrow.rotation_degrees = dir
+
+
+func _on_attack_timer_timeout() -> void:
+	can_attack = true
