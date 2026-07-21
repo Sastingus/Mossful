@@ -3,6 +3,7 @@ class_name BossEntity
 
 @export var patterns : Array[PackedScene]
 var previous_patterns := []
+var last_pattern 
 @export var attackSpeed := 5.0
 @export var attackSpeedRand := 0.5
 
@@ -17,7 +18,7 @@ func attack() -> void:
 	var attackPicked := false
 	while not attackPicked:
 		var possibleAttack = patterns.pick_random()
-		if not previous_patterns.has(possibleAttack):
+		if not previous_patterns.has(possibleAttack) && not last_pattern == possibleAttack:
 			previous_patterns.append(possibleAttack)
 			var currentAttack = possibleAttack.instantiate()
 			add_child(currentAttack)
@@ -25,6 +26,9 @@ func attack() -> void:
 			attack_timer.wait_time = attackSpeed + randf_range(-attackSpeedRand,attackSpeedRand)
 			if previous_patterns.size() >= patterns.size():
 				previous_patterns.clear()
+				last_pattern = possibleAttack
+			if previous_patterns.size() == 1:
+				last_pattern = null
 			attackPicked = true
 
 

@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvt2mwm1ofp44"]
+
+[ext_resource type="PackedScene" uid="uid://dxeirnxs8cup3" path="res://scenes/bullet/bullet.tscn" id="2_uimps"]
+
+[node name="triple_bullets_pat" type="Node2D"]
+
+[node name="EnemyBullet" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(-142, -88)
+rotation = 0.2617994
+speed = 170
+acceleration = 2
+
+[node name="EnemyBullet2" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(-142, -88)
+rotation = 1.3089969
+speed = 170
+acceleration = 2
+
+[node name="EnemyBullet3" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(-142, -88)
+rotation = 0.7853982
+speed = 170
+acceleration = 2
+
+[node name="EnemyBullet4" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(98.00003, -92)
+rotation = 1.5707964
+speed = 170
+delay = 0.3
+acceleration = 2
+
+[node name="EnemyBullet5" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(98, -92)
+rotation = 2.6179938
+speed = 170
+delay = 0.3
+acceleration = 2
+
+[node name="EnemyBullet6" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(98, -92)
+rotation = 2.0943952
+speed = 170
+delay = 0.3
+acceleration = 2
+
+[node name="EnemyBullet7" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(96.00003, 83)
+rotation = 3.6235828
+speed = 170
+delay = 0.6
+acceleration = 2
+
+[node name="EnemyBullet8" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(96, 83.000015)
+rotation = 4.6707807
+speed = 170
+delay = 0.6
+acceleration = 2
+
+[node name="EnemyBullet9" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(96, 83)
+rotation = 4.1471815
+speed = 170
+delay = 0.6
+acceleration = 2
+
+[node name="EnemyBullet10" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(-97.99997, 87)
+rotation = 4.861146
+speed = 170
+delay = 0.9
+acceleration = 2
+
+[node name="EnemyBullet11" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(-98.00003, 87.000015)
+rotation = 5.9083433
+speed = 170
+delay = 0.9
+acceleration = 2
+
+[node name="EnemyBullet12" parent="." instance=ExtResource("2_uimps")]
+position = Vector2(-98, 87)
+rotation = 5.3847446
+speed = 170
+delay = 0.9
+acceleration = 2
