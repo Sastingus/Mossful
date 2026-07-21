@@ -24,7 +24,7 @@ zoom = Vector2(3, 3)
 [node name="boss" parent="." instance=ExtResource("2_1fp7r")]
 position = Vector2(1, -72)
 patterns = Array[PackedScene]([ExtResource("3_1fp7r"), ExtResource("4_bq33v"), ExtResource("4_6m72w"), ExtResource("5_t5ptc"), ExtResource("2_sl2e5")])
-attackSpeed = 4.0
+attackSpeed = 3.5
 
 [node name="background" type="Node2D" parent="."]
 

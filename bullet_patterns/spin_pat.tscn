@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dxeirnxs8cup3" path="res://scenes/bullet/bullet.tscn" id="1_4pagn"]
 [ext_resource type="PackedScene" uid="uid://dhp8roqh0osld" path="res://scenes/bullet/following_bullets/following_bullet.tscn" id="3_1b2cj"]
 
-[node name="Node2D" type="Node2D"]
+[node name="spin_pat" type="Node2D"]
 script = ExtResource("1_1fjgy")
 
 [node name="Area2D" parent="." instance=ExtResource("1_4pagn")]

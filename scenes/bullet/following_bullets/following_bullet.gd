@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 			queue_free()
 
 func spawn_bullet() -> void:
+	warning.queue_free()
 	particles.emitting = true
 	bullet_spawned = true
 	visible = true
