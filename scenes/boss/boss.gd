@@ -4,14 +4,14 @@ class_name BossEntity
 @export var patterns : Array[PackedScene]
 var previous_patterns := []
 @export var attackSpeed := 5.0
-var attackSpeedRand := 0.5
-
+@export var attackSpeedRand := 0.5
 
 @onready var attack_timer: Timer = $AttackTimer
 
 func _ready() -> void:
 	attack_timer.wait_time = attackSpeed+ randf_range(-attackSpeedRand,attackSpeedRand)
 	SignalBus.boss_hit.connect(take_damage)
+	attack()
 
 func attack() -> void:
 	var attackPicked := false

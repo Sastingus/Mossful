@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
-const SPEED = 7500
+const SPEED = 9000
 
 var can_attack := true
-
 
 @onready var poison_timer: Timer = %PoisonTimer
 @onready var hp_label: Label = $HpLabel
@@ -16,7 +15,9 @@ var can_attack := true
 func _ready() -> void:
 	SignalBus.player_poisoned.connect(poisoned)
 	boss_bar.max_value = Globals.boss_max_hp
+	attack_timer.wait_time = Globals.player_atk_cooldown
 	attack_bar.min_value = -attack_timer.wait_time
+
 
 func _physics_process(delta: float) -> void:
 	var inputDir := Vector2.ZERO
@@ -30,7 +31,7 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	hp_label.text = "       hp:
-	"+str(Globals.player_hp)+ "/150.0"
+	"+str(Globals.player_hp)+ "/"+str(Globals.max_player_hp)
 	
 	boss_bar.value = Globals.boss_hp
 	attack_bar.value = -attack_timer.time_left
