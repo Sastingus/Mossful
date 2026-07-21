@@ -26,7 +26,6 @@ func attack() -> void:
 			if previous_patterns.size() >= patterns.size():
 				previous_patterns.clear()
 			attackPicked = true
-			print(previous_patterns)
 
 
 func take_damage():

@@ -43,3 +43,4 @@ func spawn_bullet() -> void:
 func _on_body_entered(body: CollisionObject2D) -> void:
 	if body is CharacterBody2D:
 		SignalBus.player_poisoned.emit()
+		queue_free()

@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb8emgvynwgu5"]
+
+[ext_resource type="Script" uid="uid://cwng1evspobrd" path="res://bullet_patterns/!bullet_pattern.gd" id="1_7ewl5"]
+[ext_resource type="PackedScene" uid="uid://dhp8roqh0osld" path="res://scenes/bullet/following_bullets/following_bullet.tscn" id="2_0gh4y"]
+[ext_resource type="PackedScene" uid="uid://dxeirnxs8cup3" path="res://scenes/bullet/bullet.tscn" id="3_nuvso"]
+
+[node name="follow_pat" type="Node2D"]
+script = ExtResource("1_7ewl5")
+
+[node name="FollowingBullet" parent="." instance=ExtResource("2_0gh4y")]
+position = Vector2(-166, -97)
+rotation = 1.0471976
+speed = 100
+acceleration = 2
+
+[node name="FollowingBullet2" parent="." instance=ExtResource("2_0gh4y")]
+position = Vector2(187, -81.00001)
+rotation = 2.8797934
+speed = 100
+delay = 0.5
+acceleration = 2
+
+[node name="FollowingBullet3" parent="." instance=ExtResource("2_0gh4y")]
+position = Vector2(128.00002, 73)
+rotation = 3.926991
+speed = 100
+delay = 1.0
+acceleration = 2
+
+[node name="FollowingBullet4" parent="." instance=ExtResource("2_0gh4y")]
+position = Vector2(-111, 93)
+rotation = 5.4977875
+speed = 100
+delay = 1.5
+acceleration = 2
+
+[node name="EnemyBullet" parent="." instance=ExtResource("3_nuvso")]
+position = Vector2(51, -156)
+rotation = 1.5707964
+speed = 250
+delay = 0.1
+
+[node name="EnemyBullet2" parent="." instance=ExtResource("3_nuvso")]
+position = Vector2(-121, -161)
+rotation = 1.5707964
+speed = 250
+delay = 0.3
+
+[node name="EnemyBullet3" parent="." instance=ExtResource("3_nuvso")]
+position = Vector2(27, 97)
+rotation = 4.712389
+speed = 250
+delay = 0.7
+
+[node name="EnemyBullet5" parent="." instance=ExtResource("3_nuvso")]
+position = Vector2(-60, 83.000015)
+rotation = 4.6921225
+speed = 250
+delay = 0.5
+
+[node name="EnemyBullet4" parent="." instance=ExtResource("3_nuvso")]
+position = Vector2(179, -25)
+rotation = 3.1415927
+speed = 350
+delay = 0.9

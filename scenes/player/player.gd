@@ -11,6 +11,7 @@ var can_attack := true
 @onready var boss_bar: ProgressBar = $BossBar
 @onready var attack_timer: Timer = %AttackTimer
 @onready var attack_bar: ProgressBar = $AttackBar
+@onready var hit_particles: GPUParticles2D = %HitParticles
 
 func _ready() -> void:
 	SignalBus.player_poisoned.connect(poisoned)
@@ -24,6 +25,8 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = inputDir.normalized() * SPEED * delta
 	move_and_slide()
+	
+	Globals.player_location = global_position
 
 func _process(_delta: float) -> void:
 	hp_label.text = "       hp:
@@ -56,6 +59,7 @@ poison and health
 func poisoned():
 	Globals.is_player_poi = true
 	Globals.player_poi += Globals.on_hit_poi
+	hit_particles.restart()
 	
 	if poison_timer.is_stopped():
 		poison_timer.start()

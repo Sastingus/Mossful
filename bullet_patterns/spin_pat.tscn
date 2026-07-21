@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6xo53voey65y"]
+[gd_scene load_steps=4 format=3 uid="uid://b6xo53voey65y"]
 
+[ext_resource type="Script" uid="uid://cwng1evspobrd" path="res://bullet_patterns/!bullet_pattern.gd" id="1_1fjgy"]
 [ext_resource type="PackedScene" uid="uid://dxeirnxs8cup3" path="res://scenes/bullet/bullet.tscn" id="1_4pagn"]
+[ext_resource type="PackedScene" uid="uid://dhp8roqh0osld" path="res://scenes/bullet/following_bullets/following_bullet.tscn" id="3_1b2cj"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_1fjgy")
 
 [node name="Area2D" parent="." instance=ExtResource("1_4pagn")]
 position = Vector2(-70, 70)
@@ -55,25 +58,14 @@ delay = 0.5
 spin = -3.0
 acceleration = -5
 
-[node name="EnemyBullet" parent="." instance=ExtResource("1_4pagn")]
-position = Vector2(8, -8)
-rotation = 3.1415927
-speed = 250
+[node name="FollowingBullet" parent="." instance=ExtResource("3_1b2cj")]
+position = Vector2(-133, -111)
+rotation = 0.76587564
+speed = 100
 delay = 1.5
 
-[node name="EnemyBullet4" parent="." instance=ExtResource("1_4pagn")]
-position = Vector2(-7, 7)
-speed = 250
-delay = 1.5
-
-[node name="EnemyBullet2" parent="." instance=ExtResource("1_4pagn")]
-position = Vector2(8, 7)
-rotation = 4.712389
-speed = 250
-delay = 1.5
-
-[node name="EnemyBullet3" parent="." instance=ExtResource("1_4pagn")]
-position = Vector2(-7, -8)
-rotation = 7.853982
-speed = 250
-delay = 1.5
+[node name="FollowingBullet2" parent="." instance=ExtResource("3_1b2cj")]
+position = Vector2(122.999985, 76)
+rotation = 3.8976858
+speed = 100
+delay = 1.7
